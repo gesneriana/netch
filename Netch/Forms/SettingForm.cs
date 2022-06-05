@@ -32,6 +32,7 @@ public partial class SettingForm : BindingForm
             Global.Settings.DetectionTick);
 
         BindTextBox<int>(StartedPingIntervalTextBox, _ => true, i => Global.Settings.StartedPingInterval = i, Global.Settings.StartedPingInterval);
+        BindTextBox<string>(txtSubProxy, p => p.StartsWith("socks5://"), p => Global.Settings.UpStreamProxy = p, Global.Settings.UpStreamProxy);
 
         object[]? stuns;
         try
@@ -171,6 +172,8 @@ public partial class SettingForm : BindingForm
         BindCheckBox(UpdateServersWhenOpenedCheckBox, b => Global.Settings.UpdateServersWhenOpened = b, Global.Settings.UpdateServersWhenOpened);
 
         BindCheckBox(NoSupportDialogCheckBox, b => Global.Settings.NoSupportDialog = b, Global.Settings.NoSupportDialog);
+
+        BindCheckBox(chkForceParsing, b => Global.Settings.ForceParsing = b, Global.Settings.ForceParsing);
 
         #endregion
 

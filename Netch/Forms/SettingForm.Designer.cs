@@ -95,6 +95,7 @@ namespace Netch.Forms
             this.writeBufferSizeTextBox = new System.Windows.Forms.TextBox();
             this.congestionCheckBox = new System.Windows.Forms.CheckBox();
             this.OtherTabPage = new System.Windows.Forms.TabPage();
+            this.chkForceParsing = new System.Windows.Forms.CheckBox();
             this.ExitWhenClosedCheckBox = new System.Windows.Forms.CheckBox();
             this.StopWhenExitedCheckBox = new System.Windows.Forms.CheckBox();
             this.StartWhenOpenedCheckBox = new System.Windows.Forms.CheckBox();
@@ -114,6 +115,8 @@ namespace Netch.Forms
             this.ControlButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblSubProxy = new System.Windows.Forms.Label();
+            this.txtSubProxy = new System.Windows.Forms.TextBox();
             this.TabControl.SuspendLayout();
             this.GeneralTabPage.SuspendLayout();
             this.PortGroupBox.SuspendLayout();
@@ -146,6 +149,8 @@ namespace Netch.Forms
             // GeneralTabPage
             // 
             this.GeneralTabPage.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.GeneralTabPage.Controls.Add(this.txtSubProxy);
+            this.GeneralTabPage.Controls.Add(this.lblSubProxy);
             this.GeneralTabPage.Controls.Add(this.PortGroupBox);
             this.GeneralTabPage.Controls.Add(this.ServerPingTypeLabel);
             this.GeneralTabPage.Controls.Add(this.ICMPingRadioBtn);
@@ -765,6 +770,7 @@ namespace Netch.Forms
             // OtherTabPage
             // 
             this.OtherTabPage.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.OtherTabPage.Controls.Add(this.chkForceParsing);
             this.OtherTabPage.Controls.Add(this.ExitWhenClosedCheckBox);
             this.OtherTabPage.Controls.Add(this.StopWhenExitedCheckBox);
             this.OtherTabPage.Controls.Add(this.StartWhenOpenedCheckBox);
@@ -780,6 +786,17 @@ namespace Netch.Forms
             this.OtherTabPage.Size = new System.Drawing.Size(461, 321);
             this.OtherTabPage.TabIndex = 4;
             this.OtherTabPage.Text = "Others";
+            // 
+            // chkForceParsing
+            // 
+            this.chkForceParsing.AutoSize = true;
+            this.chkForceParsing.Location = new System.Drawing.Point(224, 171);
+            this.chkForceParsing.Name = "chkForceParsing";
+            this.chkForceParsing.Size = new System.Drawing.Size(203, 21);
+            this.chkForceParsing.TabIndex = 9;
+            this.chkForceParsing.Text = "Subscription forced resolution";
+            this.chkForceParsing.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkForceParsing.UseVisualStyleBackColor = true;
             // 
             // ExitWhenClosedCheckBox
             // 
@@ -975,6 +992,23 @@ namespace Netch.Forms
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // lblSubProxy
+            // 
+            this.lblSubProxy.AutoSize = true;
+            this.lblSubProxy.Location = new System.Drawing.Point(17, 287);
+            this.lblSubProxy.Name = "lblSubProxy";
+            this.lblSubProxy.Size = new System.Drawing.Size(178, 17);
+            this.lblSubProxy.TabIndex = 15;
+            this.lblSubProxy.Text = "Subscription proxy(socks5://)";
+            // 
+            // txtSubProxy
+            // 
+            this.txtSubProxy.Location = new System.Drawing.Point(201, 284);
+            this.txtSubProxy.Name = "txtSubProxy";
+            this.txtSubProxy.Size = new System.Drawing.Size(245, 23);
+            this.txtSubProxy.TabIndex = 16;
+            this.txtSubProxy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1098,5 +1132,8 @@ namespace Netch.Forms
         private System.Windows.Forms.CheckBox FilterUDPCheckBox;
         private System.Windows.Forms.CheckBox DNSProxyCheckBox;
         private ErrorProvider errorProvider;
+        private CheckBox chkForceParsing;
+        private Label lblSubProxy;
+        private TextBox txtSubProxy;
     }
 }
