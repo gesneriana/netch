@@ -102,6 +102,11 @@ public class Setting
     public ushort Socks5LocalPort { get; set; } = 2801;
 
     /// <summary>
+    ///     更新订阅使用的代理地址,请先安装v2rayn, 或者在android手机的VPN软件上开启局域网共享
+    /// </summary>
+    public string UpStreamProxy { get; set; } = string.Empty;
+
+    /// <summary>
     ///     启动后延迟测试间隔/秒
     /// </summary>
     public int StartedPingInterval { get; set; } = -1;
@@ -140,6 +145,11 @@ public class Setting
     ///     是否打开软件时更新订阅
     /// </summary>
     public bool UpdateServersWhenOpened { get; set; } = false;
+
+    /// <summary>
+    /// 是否在更新订阅之后使用Google的DNS服务强制解析域名为ip, 防止DNS污染
+    /// </summary>
+    public bool ForceParsing { get; set; } = false;
 
     public V2rayConfig V2RayConfig { get; set; } = new();
 
